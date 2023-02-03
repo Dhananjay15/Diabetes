@@ -37,10 +37,6 @@ def predict_diabetes(data:Diabetes):
     return {'prediction': prediction}
 
 
-
-
-if __name__ == '__main__':
-    uvicorn.run(app)
         
         
 ##uvicorn diabetes:app --reload

@@ -16,13 +16,13 @@ sc = StandardScaler()
 
 @app.post('/predict_diabetes')
 def predict_diabetes(data:Diabetes):
-    data = data.dict()
+    #data = data.dict()
     Pregnancies = data['Pregnancies']
     Glucose	= data['Glucose']
     BloodPressure = data['BloodPressure']
     SkinThickness = data['SkinThickness']
     Insulin	= data['Insulin']
-    BMI	= float(data['BMI'])
+    BMI	= data['BMI']
     DiabetesPedigreeFunction = data['DiabetesPedigreeFunction']
     Age = data['Age']
     

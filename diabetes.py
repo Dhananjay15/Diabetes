@@ -15,7 +15,7 @@ classifier=pickle.load(pickle_in)
 sc = StandardScaler()
 
 @app.post('/predict_diabetes')
-def predict_diabetes(data:dict):
+def predict_diabetes(data):
     data = data.dict()
     Pregnancies = int(data['Pregnancies'])
     Glucose	= int(data['Glucose'])

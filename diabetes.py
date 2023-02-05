@@ -15,16 +15,16 @@ classifier=pickle.load(pickle_in)
 sc = StandardScaler()
 
 @app.post('/predict_diabetes')
-def predict_diabetes(data:Diabetes):
+def predict_diabetes(data):
     data = data.dict()
-    Pregnancies = data['Pregnancies']
-    Glucose	= data['Glucose']
-    BloodPressure = data['BloodPressure']
-    SkinThickness = data['SkinThickness']
-    Insulin	= data['Insulin']
-    BMI	= data['BMI']
-    DiabetesPedigreeFunction = data['DiabetesPedigreeFunction']
-    Age = data['Age']
+    Pregnancies = int(data['Pregnancies'])
+    Glucose	= int(data['Glucose'])
+    BloodPressure = int(data['BloodPressure'])
+    SkinThickness = int(data['SkinThickness'])
+    Insulin	= int(data['Insulin'])
+    BMI	= float(data['BMI'])
+    DiabetesPedigreeFunction = float(data['DiabetesPedigreeFunction'])
+    Age = int(data['Age'])
     
     data = sc.fit_transform([[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age]])
     
